@@ -1,3 +1,24 @@
+* {
+  border-style: dotted;
+  border-width: 1px;
+}
+
+.header {
+  text-align:center; /*text-align is applied to images*/
+}
+
+.smiley, .logo {
+  vertical-align: middle;
+  display: inline-block;
+}
+.smiley {
+  width: 33%;
+}
+
+.logo {
+  width: 66%;
+}
+
 .mainContainer p span {
   font-weight: bold;
 }
