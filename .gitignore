@@ -2,3 +2,5 @@ bower_components/*
 !bower_components/angular
 bower_components/angular/*
 !bower_components/angular/angular.js
+bower_components/bootstrap/*
+!bower_components/bootstrap/dist
