@@ -1,2 +1,4 @@
 bower_components/*
+!bower_components/angular
+bower_components/angular/*
 !bower_components/angular/angular.js
