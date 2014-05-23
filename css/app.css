@@ -1,0 +1,9 @@
+.mainContainer p span {
+  font-weight: bold;
+}
+
+.mainContainer .placeholder {
+  color: gray;
+  font-weight:lighter;
+  /*text-decoration:underline;*/
+}
