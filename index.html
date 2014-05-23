@@ -12,25 +12,25 @@
     <div>Provide the following words:</div>
     <div class='col1'>
       <input ng-model='maleName.text' placeholder={{maleName.placeholder}}>
-      <input ng-model='job_title' placeholder='job title'>
-      <input ng-model='tedious_task' placeholder='tedious task'>
+      <input ng-model='jobTitle.text' ng-init="jobTitle.placeholder='job title'" placeholder={{jobTitle.placeholder}}>
+      <input ng-model='tediousTask.text' placeholder={{tediousTask.placeholder}}>
     </div>
     <div class='col2'>
-      <input ng-model='dirty_task' placeholder='Dirty task'>
-      <input ng-model='celebrity' placeholder='Celebrity'>
-      <input ng-model='useless_skill' placeholder='Useless skill'>
+      <input ng-model='dirtyTask.text' placeholder={{dirtyTask.placeholder}}>
+      <input ng-model='celebrity.text' placeholder={{celebrity.placeholder}}>
+      <input ng-model='uselessSkill.text' placeholder={{uselessSkill.placeholder}}>
     </div>
     <div class='col3'>
-      <input ng-model='obnoxious_celebrity' placeholder='Obnoxious celebrity'>
-      <input ng-model='huge_number' placeholder='Huge number'>
-      <input ng-model='adjective' placeholder='Adjective'>
+      <input ng-model='obnoxiousCelebrity.text' placeholder={{obnoxiousCelebrity.placeholder}}>
+      <input ng-model='hugeNumber.text' placeholder={{hugeNumber.placeholder}}>
+      <input ng-model='adjective.text' placeholder={{adjective.placeholder}}>
     </div>
   </div>
   <div class='mainContainer'>
     <p>
-      <span ng-class='{placeholder: !(maleName.text)}'>{{maleName.text || maleName.placeholder}}</span> was a <span>{{job_title}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{tedious_task}}</span> and <span>{{dirty_task}}</span>. So, <span>{{maleName.text}}</span> met with her life mentor <span>{{celebrity}}</span> who told her to learn how to <span>{{useless_skill}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{useless_skill}}</span> so she studied programming instead. 
+      <span ng-class='{placeholder: !(maleName.text)}'>{{maleName.text || '[' + maleName.placeholder + ']'}}</span> was a <span ng-class='{placeholder: !(jobTitle.text)}'>{{jobTitle.text || '[' + jobTitle.placeholder + ']'}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{tediousTask.text}}</span> and <span>{{dirtyTask.text}}</span>. So, <span>{{maleName.text}}</span> met with her life mentor <span>{{celebrity.text}}</span> who told her to learn how to <span>{{uselessSkill.text}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill.text}}</span> so she studied programming instead. 
  
-      What a great decision! With her new skills, <span>{{maleName.text}}</span> built a(n) <span>{{adjective}}</span> robot named <span>{{obnoxiuous_celebrity}}</span> that not only loved <span>{{dirty_task}}</span> but did it <span>{{huge_number}}</span> faster. 
+      What a great decision! With her new skills, <span>{{maleName.text}}</span> built a(n) <span>{{adjective.text}}</span> robot named <span>{{obnoxiousCelebrity.text}}</span> that not only loved <span>{{dirtyTask.text}}</span> but did it <span>{{hugeNumber.text}}</span> faster. 
     </p>
   </div>
 <script src='bower_components/angular/angular.js'></script>
