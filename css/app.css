@@ -1,10 +1,22 @@
 * {
-  border-style: dotted;
-  border-width: 2px;
+  /*border-style: dotted;*/
+  /*border-width: 2px;*/
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.show-border {
+  border: 1px solid;
 }
 
 .header {
   text-align:center; /*text-align is applied to images*/
+  border: 1px solid;
 }
 
 .vcenter {
