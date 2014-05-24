@@ -7,38 +7,41 @@
 <html ng-app='ngMadLibs'>
 <head>
   <title>ngMadLibs App</title>
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body ng-controller='MadLibsController'>
-  <div class='header'>
-    <div class='smiley'>
-      <img src="img/mad-lib-happy-face.png">
-    </div>
-    <div class='logo'>
-      <img src="img/ng-mad-libs-logo.png">
+  <!-- <div class='header'> -->
+  <div class='row'>
+    <!-- <div class='smiley'> -->
+    <div class='col-xs-4 col-md-4 col-lg-4 vcenter'>
+      <img src="img/mad-lib-happy-face.png" class="img-responsive center-block">
+    </div><!-- Keep this comment to remove white space that affects 12 col layout
+  --><div class='col-xs-8 col-md-8 col-lg-8 vcenter'>
+      <img src="img/ng-mad-libs-logo.png" class="img-responsive center-block">
     </div>
   </div>
-  <div class='provideWords'>
+  <div class='provideWords col-sm-12'>
     <div>Provide the following words:</div>
-    <div class='col1'>
-      <input ng-model='maleName.text' placeholder={{maleName.placeholder}}>
-      <input ng-model='jobTitle.text' ng-init="jobTitle.placeholder='job title'" placeholder={{jobTitle.placeholder}}>
-      <input ng-model='tediousTask.text' placeholder={{tediousTask.placeholder}}>
+    <div class='col-sm-4 .form'>
+      <input ng-model='maleName.text' placeholder={{maleName.placeholder}} class="form-group form-control">
+      <input ng-model='jobTitle.text' ng-init="jobTitle.placeholder='job title'" placeholder={{jobTitle.placeholder}} class="form-group form-control">
+      <input ng-model='tediousTask.text' placeholder={{tediousTask.placeholder}} class="form-group form-control">
     </div>
-    <div class='col2'>
+    <div class='col-sm-4'>
       <input ng-model='dirtyTask.text' placeholder={{dirtyTask.placeholder}}>
       <input ng-model='celebrity.text' placeholder={{celebrity.placeholder}}>
       <input ng-model='uselessSkill.text' placeholder={{uselessSkill.placeholder}}>
     </div>
-    <div class='col3'>
+    <div class='col-sm-4'>
       <input ng-model='obnoxiousCelebrity.text' placeholder={{obnoxiousCelebrity.placeholder}}>
       <input ng-model='hugeNumber.text' placeholder={{hugeNumber.placeholder}}>
       <input ng-model='adjective.text' placeholder={{adjective.placeholder}}>
     </div>
   </div>
-  <div class='mainContainer'>
+  <div class='mainContainer col-sm-12'>
     <p>
-      <span ng-class='{placeholder: !(maleName.text)}'>{{maleName.text || '[' + maleName.placeholder + ']'}}</span> was a <span ng-class='{placeholder: !(jobTitle.text)}'>{{jobTitle.text || '[' + jobTitle.placeholder + ']'}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span>{{tediousTask.text}}</span> and <span>{{dirtyTask.text}}</span>. So, <span>{{maleName.text}}</span> met with her life mentor <span>{{celebrity.text}}</span> who told her to learn how to <span>{{uselessSkill.text}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill.text}}</span> so she studied programming instead. 
+      <span ng-class='{placeholder: !(maleName.text)}'>{{maleName.text || '[' + maleName.placeholder + ']'}}</span> was a <span ng-class='{placeholder: !(jobTitle.text)}'>{{jobTitle.text || '[' + jobTitle.placeholder + ']'}}</span> who loved technology. Although she loved parts of her job, she absolutely hated  <span ng-class='{placeholder: !(tediousTask.text)}'>{{tediousTask.text || '[' + tediousTask.placeholder + ']'}}</span> and <span>{{dirtyTask.text}}</span>. So, <span>{{maleName.text}}</span> met with her life mentor <span>{{celebrity.text}}</span> who told her to learn how to <span>{{uselessSkill.text}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{uselessSkill.text}}</span> so she studied programming instead. 
  
       What a great decision! With her new skills, <span>{{maleName.text}}</span> built a(n) <span>{{adjective.text}}</span> robot named <span>{{obnoxiousCelebrity.text}}</span> that not only loved <span>{{dirtyTask.text}}</span> but did it <span>{{hugeNumber.text}}</span> faster. 
     </p>

@@ -1,23 +1,21 @@
 * {
   border-style: dotted;
-  border-width: 1px;
+  border-width: 2px;
 }
 
 .header {
   text-align:center; /*text-align is applied to images*/
 }
 
-.smiley, .logo {
-  vertical-align: middle;
+.vcenter {
   display: inline-block;
-}
-.smiley {
-  width: 33%;
+  vertical-align: middle;
+  float: none;
+  /*text-align is applied to images*/
+  /*text-align: center; */
 }
 
-.logo {
-  width: 66%;
-}
+
 
 .mainContainer p span {
   font-weight: bold;
@@ -25,6 +23,6 @@
 
 .mainContainer .placeholder {
   color: gray;
-  font-weight:lighter;
+  font-weight: normal;
   /*text-decoration:underline;*/
 }
