@@ -24,8 +24,21 @@
 
     <div class='provideWords col-sm-12 show-border'>
       <h3>Provide the following words:</h3>
+      <!-- <div class='col-sm-4'> -->
+        <fieldset>
+          <label class='radio-inline'>
+            <input type='radio' ng-model='gender' value='F'> Female
+          </label>
+          <label class='radio-inline'>
+            <input type='radio' ng-model='gender' value='M'> Male
+          </label>
+          <label class='radio-inline'>
+            <input type='radio' ng-model='gender' value='Other'> Other
+          </label>
+        </fieldset>
+      <!-- </div> -->
       <div class='col-sm-4'>
-        <input ng-model='maleName.text' placeholder={{maleName.placeholder}} class="form-group form-control">
+        <input ng-model='personName.text' placeholder={{personName.placeholder}} class="form-group form-control">
         <input ng-model='jobTitle.text' ng-init="jobTitle.placeholder='job title'" placeholder={{jobTitle.placeholder}} class="form-group form-control">
         <input ng-model='tediousTask.text' placeholder={{tediousTask.placeholder}} class="form-group form-control">
       </div>
@@ -43,9 +56,9 @@
 
     <div class='paragraphContainer col-sm-12 show-border'>
       <p inject-words class='lead'>
-        <span data-word='maleName'></span> was a <span data-word='jobTitle'></span> who loved technology. Although she loved parts of her job, she absolutely hated  <span data-word='tediousTask'></span> and <span data-word='dirtyTask'></span>. So, <span data-word='maleName'></span> met with her life mentor <span data-word='celebrity'></span> who told her to learn how to <span data-word='uselessSkill'></span> with Thinkful. Thinkful didn't offer a course on <span data-word='uselessSkill'></span> so she studied programming instead. 
+        <span data-word='personName'></span> was a <span data-word='jobTitle'></span> who loved technology. Although {{pronoun}} loved parts of {{possessive}} job, {{pronoun}} absolutely hated  <span data-word='tediousTask'></span> and <span data-word='dirtyTask'></span>. So, <span data-word='personName'></span> met with {{possessive}} life mentor <span data-word='celebrity'></span> who told {{possessive}} to learn how to <span data-word='uselessSkill'></span> with Thinkful. Thinkful didn't offer a course on <span data-word='uselessSkill'></span> so {{pronoun}} studied programming instead. 
         <br><br>
-        What a great decision! With her new skills, <span data-word='maleName'></span> built a(n) <span data-word='adjective'></span> robot named <span data-word='obnoxiousCelebrity'></span> that not only loved <span data-word='dirtyTask'></span> but did it <span data-word='hugeNumber'></span> faster. 
+        What a great decision! With {{possessive}} new skills, <span data-word='personName'></span> built a(n) <span data-word='adjective'></span> robot named <span data-word='obnoxiousCelebrity'></span> that not only loved <span data-word='dirtyTask'></span> but did it <span data-word='hugeNumber'></span> faster. 
       </p>
     </div>
   </div>

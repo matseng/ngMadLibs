@@ -23,8 +23,12 @@
   display: inline-block;
   vertical-align: middle;
   float: none;
-  /*text-align is applied to images*/
-  /*text-align: center; */
+}
+
+fieldset {
+  /*text-align: center;*/
+  padding-left: 15px;
+
 }
 
 .provideWords {

@@ -3,7 +3,7 @@ angular.module('ngMadLibs', []);
 angular.module('ngMadLibs')
   .controller('MadLibsController', ['$scope', function($scope) {
     // $scope.maleName = {text: '', placeholder: 'male name'};
-    $scope.maleName = {placeholder: 'male name'};
+    $scope.personName = {placeholder: 'person name'};
     $scope.tediousTask = {placeholder: 'tedious task'};
     $scope.dirtyTask = {placeholder: 'dirty task'};
     $scope.celebrity = {placeholder: 'celebrity'};
@@ -11,6 +11,27 @@ angular.module('ngMadLibs')
     $scope.obnoxiousCelebrity = {placeholder: 'obnoxious celebrity'};
     $scope.hugeNumber = {placeholder: 'huge number'};
     $scope.adjective = {placeholder: 'adjective'};
+
+    $scope.gender = 'Other';
+    var genderLookup = {
+      Other: {
+        pronoun: 'he/she',
+        possessive: 'his/her'
+      },
+      F: {
+        pronoun: 'she',
+        possessive: 'her'
+      },
+      M: {
+        pronoun: 'he',
+        possessive: 'his'
+      }
+    };
+    $scope.$watch('gender', function() {
+      console.log('gender changed');
+      $scope.pronoun = genderLookup[$scope.gender].pronoun;
+      $scope.possessive = genderLookup[$scope.gender].possessive;
+    });
   }]);
 
 angular.module('ngMadLibs')
@@ -33,7 +54,6 @@ angular.module('ngMadLibs')
           $wordElement.attr('ng-class', wordClassExpression);
           $wordElement.html(wordTextExpression);
           $compile($wordElement)($scope);
-          console.log($wordElement);
         }
       }
     }
