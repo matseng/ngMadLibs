@@ -14,7 +14,7 @@ angular.module('ngMadLibs')
   }]);
 
 angular.module('ngMadLibs')
-  .directive('injectWords', [function() {
+  .directive('injectWords', ['$compile', function($compile) {
     return {
       restrict: 'A',
       link: link
@@ -24,14 +24,15 @@ angular.module('ngMadLibs')
       var wordElements = $element[0].getElementsByTagName('span');
       console.log(wordElements);
       for(var i = 0; i < wordElements.length; i++) {
-
         var $wordElement = angular.element(wordElements[i]);
         var wordString = $wordElement.attr('data-word');
         if(wordString) {
           var wordObject = $wordElement.scope()[wordString];
-          $wordElement.attr('ng-class', '{placeholder: !(' + wordString + '.text)}');
-          // $wordElement.html("{{maleName.text || '[' + maleName.placeholder + ']'}}");
-          //TODO: Change line above to an angular expression as opposed to a string
+          var wordClassExpression = '{placeholder: !(' + wordString + '.text)}';
+          var wordTextExpression = "{{" + wordString + ".text || '[' + " + wordString + ".placeholder + ']'}}";
+          $wordElement.attr('ng-class', wordClassExpression);
+          $wordElement.html(wordTextExpression);
+          $compile($wordElement)($scope);
           console.log($wordElement);
         }
       }
