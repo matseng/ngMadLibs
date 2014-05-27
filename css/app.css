@@ -15,8 +15,8 @@
 }
 
 .header {
-  text-align:center; /*text-align is applied to images*/
-  border: 1px solid;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .vcenter {
@@ -27,13 +27,20 @@
   /*text-align: center; */
 }
 
+.provideWords {
+  padding-right: 15px;
+  padding-left: 15px;
+}
 
+.paragraphContainer {
+  padding-top: 15px;
+}
 
-.mainContainer p span {
+.paragraphContainer p span {
   font-weight: bold;
 }
 
-.mainContainer .placeholder {
+.paragraphContainer .placeholder {
   color: gray;
   font-weight: normal;
   /*text-decoration:underline;*/

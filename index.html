@@ -12,7 +12,7 @@
 </head>
 <body ng-controller='MadLibsController'>
   <div class='container'>
-    <div class='row show-border'>
+    <div class='row header show-border'>
       <!-- <div class='smiley'> -->
       <div class='col-xs-4 col-md-4 col-lg-4 vcenter'>
         <img src="img/mad-lib-happy-face.png" class="img-responsive center-block">
@@ -40,7 +40,8 @@
         <input ng-model='adjective.text' placeholder={{adjective.placeholder}} class="form-group form-control">
       </div>
     </div>
-    <div class='mainContainer col-sm-12 show-border'>
+
+    <div class='paragraphContainer col-sm-12 show-border'>
       <p inject-words class='lead'>
         <span data-word='maleName'></span> was a <span data-word='jobTitle'></span> who loved technology. Although she loved parts of her job, she absolutely hated  <span data-word='tediousTask'></span> and <span data-word='dirtyTask'></span>. So, <span data-word='maleName'></span> met with her life mentor <span data-word='celebrity'></span> who told her to learn how to <span data-word='uselessSkill'></span> with Thinkful. Thinkful didn't offer a course on <span data-word='uselessSkill'></span> so she studied programming instead. 
         <br><br>
