@@ -13,7 +13,6 @@
 <body ng-controller='MadLibsController'>
   <div class='container'>
     <div class='row header show-border'>
-      <!-- <div class='smiley'> -->
       <div class='col-xs-4 col-md-4 col-lg-4 vcenter'>
         <img src="img/mad-lib-happy-face.png" class="img-responsive center-block">
       </div><!-- Keep this comment to remove white space that affects 12 col layout
@@ -24,7 +23,6 @@
 
     <div class='provideWords col-sm-12 show-border'>
       <h3>Provide the following words:</h3>
-      <!-- <div class='col-sm-4'> -->
         <fieldset>
           <label class='radio-inline'>
             <input type='radio' ng-model='gender' value='F'> Female
@@ -36,21 +34,20 @@
             <input type='radio' ng-model='gender' value='Other'> Other
           </label>
         </fieldset>
-      <!-- </div> -->
       <div class='col-sm-4'>
-        <input ng-model='personName.text' placeholder={{personName.placeholder}} class="form-group form-control">
+        <input ng-model='personName.text' placeholder='{{personName.placeholder}}' class="form-group form-control">
         <input ng-model='jobTitle.text' ng-init="jobTitle.placeholder='job title'" placeholder={{jobTitle.placeholder}} class="form-group form-control">
-        <input ng-model='tediousTask.text' placeholder={{tediousTask.placeholder}} class="form-group form-control">
+        <input ng-model='tediousTask.text' placeholder='{{tediousTask.placeholder}}' class="form-group form-control">
       </div>
       <div class='col-sm-4'>
-        <input ng-model='dirtyTask.text' placeholder={{dirtyTask.placeholder}} class="form-group form-control">
-        <input ng-model='celebrity.text' placeholder={{celebrity.placeholder}} class="form-group form-control">
-        <input ng-model='uselessSkill.text' placeholder={{uselessSkill.placeholder}} class="form-group form-control">
+        <input ng-model='dirtyTask.text' placeholder='{{dirtyTask.placeholder}}' class="form-group form-control">
+        <input ng-model='celebrity.text' placeholder='{{celebrity.placeholder}}' class="form-group form-control">
+        <input ng-model='uselessSkill.text' placeholder='{{uselessSkill.placeholder}}' class="form-group form-control">
       </div>
       <div class='col-sm-4'>
-        <input ng-model='obnoxiousCelebrity.text' placeholder={{obnoxiousCelebrity.placeholder}} class="form-group form-control">
-        <input ng-model='hugeNumber.text' placeholder={{hugeNumber.placeholder}} class="form-group form-control">
-        <input ng-model='adjective.text' placeholder={{adjective.placeholder}} class="form-group form-control">
+        <input ng-model='obnoxiousCelebrity.text' placeholder='{{obnoxiousCelebrity.placeholder}}' class="form-group form-control">
+        <input ng-model='hugeNumber.text' placeholder='{{hugeNumber.placeholder}}' class="form-group form-control">
+        <input ng-model='adjective.text' placeholder='{{adjective.placeholder}}' class="form-group form-control">
       </div>
     </div>
 
