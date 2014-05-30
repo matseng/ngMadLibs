@@ -3,8 +3,9 @@ angular.module('ngMadLibs', []);
 angular.module('ngMadLibs')
   .controller('MadLibsController', ['$scope', function($scope) {
     // $scope.maleName = {text: '', placeholder: 'male name'};
-    $scope.personName = {placeholder: 'person name'};
-    $scope.tediousTask = {placeholder: 'tedious task'};
+    $scope.data = {};
+    $scope.data.personName = {placeholder: 'person name'};
+    $scope.data.tediousTask = {placeholder: 'tedious task'};
     $scope.dirtyTask = {placeholder: 'dirty task'};
     $scope.celebrity = {placeholder: 'celebrity'};
     $scope.uselessSkill = {placeholder: 'useless skill'};
@@ -27,11 +28,18 @@ angular.module('ngMadLibs')
         possessive: 'his'
       }
     };
-    $scope.$watch('gender', function() {
-      console.log('gender changed');
+    $scope.$watch('data.gender', function() {
       $scope.pronoun = genderLookup[$scope.gender].pronoun;
       $scope.possessive = genderLookup[$scope.gender].possessive;
     });
+  }]);
+
+angular.module('ngMadLibs')
+  .controller('FormController', ['$scope', function($scope) {
+    $scope.submit = function(a,b,c) {
+      $scope.MyForm.submitted = true;
+      console.log($scope.data);
+    };
   }]);
 
 angular.module('ngMadLibs')
