@@ -34,16 +34,15 @@ angular.module('ngMadLibs')
     };
 
     $scope.$watch('data.gender', function() {
-      $scope.pronoun = genderLookup[$scope.data.gender].pronoun;
-      $scope.possessive = genderLookup[$scope.data.gender].possessive;
+      $scope.data.pronoun = genderLookup[$scope.data.gender].pronoun;
+      $scope.data.possessive = genderLookup[$scope.data.gender].possessive;
     });
 
     $scope.submit = function(a,b,c) {
       $scope.MyForm.submitted = true;
-      // console.log($scope.data);
-      console.log($scope.MyForm);
-      
       if ($scope.MyForm.$valid) {
+        $scope.MyForm.submittedValid = true;
+        console.log($scope.MyForm.submittedValid);
         $rootScope.$broadcast('formSubmitted', $scope.data);
       }
     };
@@ -51,19 +50,22 @@ angular.module('ngMadLibs')
     $scope.$on('resetClicked', function() {
       console.log("hello world, reset 2");
       initializeData();
+      $scope.MyForm.submittedValid = false;
       $scope.data.gender = 'F';  //TODO: remove, just for testing
     });
   }]);
 
 angular.module('ngMadLibs')
   .controller('ParagraphController', ['$scope', '$rootScope', function($scope, $rootScope) {
-    
+
     $scope.$on('formSubmitted', function(event, formData) {
+      $scope.submittedValid = true;
       $scope.data = formData;
       console.log($scope.data);
-    })
+    });
 
     $scope.reset = function() {
+      $scope.submittedValid = false;
       $rootScope.$broadcast('resetClicked');
     };
   }]);

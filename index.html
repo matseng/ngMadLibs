@@ -16,13 +16,13 @@
     <div class='row header show-border'>
       <div class='col-xs-4 col-md-4 col-lg-4 vcenter'>
         <img src="img/mad-lib-happy-face.png" class="img-responsive center-block">
-      </div><!-- Keep this comment to remove white space that affects 12 col layout
+      </div><!-- KEEP this comment to remove white space that affects CSS 12 col layout
     --><div class='col-xs-8 col-md-8 col-lg-8 vcenter'>
         <img src="img/ng-mad-libs-logo.png" class="img-responsive center-block">
       </div>
     </div>
 
-    <form ng-controller='FormController' ng-submit='submit()' name='MyForm' novalidate>
+    <form ng-controller='FormController' ng-submit='submit()' name='MyForm' novalidate ng-show='!(MyForm.submittedValid)'>
       <div class='provideWords col-sm-12 show-border'>
         <h3>Provide the following words:</h3>
           <fieldset>
@@ -59,14 +59,17 @@
       </div>
     </form>
 
-    <div ng-controller='ParagraphController' class='paragraphContainer col-sm-12 show-border'>
-      <p inject-words class='lead'>
-        <span data-word='personName'></span> was a <span data-word='jobTitle'></span> who loved technology. Although {{pronoun}} loved parts of {{possessive}} job, {{pronoun}} absolutely hated  <span data-word='tediousTask'></span> and <span data-word='dirtyTask'></span>. So, <span data-word='personName'></span> met with {{possessive}} life mentor <span data-word='celebrity'></span> who told {{possessive}} to learn how to <span data-word='uselessSkill'></span> with Thinkful. Thinkful didn't offer a course on <span data-word='uselessSkill'></span> so {{pronoun}} studied programming instead. 
-        <br><br>
-        What a great decision! With {{possessive}} new skills, <span data-word='personName'></span> built a(n) <span data-word='adjective'></span> robot named <span data-word='obnoxiousCelebrity'></span> that not only loved <span data-word='dirtyTask'></span> but did it <span data-word='hugeNumber'></span> faster. 
-      </p>
-      <button ng-click='reset()'>Start Over</button>
+    <div ng-controller='ParagraphController' class='paragraphContainer col-sm-12 show-border' ng-show='submittedValid'>
+      <!-- <div ng-if='submittedValid'> -->
+        <p class='lead'>
+          <span>{{data.personName.text}}</span> was a <span>{{data.jobTitle.text}}</span> who loved technology. Although {{data.pronoun}} loved parts of {{data.possessive}} job, {{data.pronoun}} absolutely hated  <span>{{data.tediousTask.text}}</span> and <span data-word='dirtyTask'></span>. So, <span data-word='personName'></span> met with {{data.possessive}} life mentor <span data-word='celebrity'></span> who told {{data.possessive}} to learn how to <span data-word='uselessSkill'></span> with Thinkful. Thinkful didn't offer a course on <span data-word='uselessSkill'></span> so {{data.pronoun}} studied programming instead. 
+          <br><br>
+          What a great decision! With {{data.possessive}} new skills, <span data-word='personName'></span> built a(n) <span data-word='adjective'></span> robot named <span data-word='obnoxiousCelebrity'></span> that not only loved <span data-word='dirtyTask'></span> but did it <span data-word='hugeNumber'></span> faster. 
+        </p>
+        <button ng-click='reset()'>Start Over</button>
+      <!-- </div> -->
     </div>
+
   </div>
 <script src='bower_components/angular/angular.js'></script>
 <script src='src/app.js'></script>
