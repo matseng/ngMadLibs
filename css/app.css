@@ -36,6 +36,11 @@ fieldset {
   padding-left: 15px;
 }
 
+.submitMadLib {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
 .paragraphContainer {
   padding-top: 15px;
 }

@@ -9,12 +9,12 @@ angular.module('ngMadLibs')
       $scope.data.personName = {placeholder: 'person name'};
       $scope.data.jobTitle = {placeholder: 'job title'};
       $scope.data.tediousTask = {placeholder: 'tedious task'};
-      $scope.dirtyTask = {placeholder: 'dirty task'};
-      $scope.celebrity = {placeholder: 'celebrity'};
-      $scope.uselessSkill = {placeholder: 'useless skill'};
-      $scope.obnoxiousCelebrity = {placeholder: 'obnoxious celebrity'};
-      $scope.hugeNumber = {placeholder: 'huge number'};
-      $scope.adjective = {placeholder: 'adjective'};
+      $scope.data.dirtyTask = {placeholder: 'dirty task'};
+      $scope.data.celebrity = {placeholder: 'celebrity'};
+      $scope.data.uselessSkill = {placeholder: 'useless skill'};
+      $scope.data.obnoxiousCelebrity = {placeholder: 'obnoxious celebrity'};
+      $scope.data.hugeNumber = {placeholder: 'huge number'};
+      $scope.data.adjective = {placeholder: 'adjective'};
     };
     initializeData();
 
@@ -50,6 +50,7 @@ angular.module('ngMadLibs')
     $scope.$on('resetClicked', function() {
       console.log("hello world, reset 2");
       initializeData();
+      $scope.MyForm.submitted = false;
       $scope.MyForm.submittedValid = false;
       $scope.data.gender = 'F';  //TODO: remove, just for testing
     });
