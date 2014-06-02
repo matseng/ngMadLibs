@@ -62,14 +62,14 @@
     </form>
 
     <div ng-controller='ParagraphController' class='paragraphContainer col-sm-12 show-border' ng-show='submittedValid'>
-      <!-- <div ng-if='submittedValid'> -->
         <p class='lead'>
           <span>{{data.personName.text}}</span> was a <span>{{data.jobTitle.text}}</span> who loved technology. Although {{data.pronoun}} loved parts of {{data.possessive}} job, {{data.pronoun}} absolutely hated  <span>{{data.tediousTask.text}}</span> and <span>{{data.dirtyTask.text}}</span>. So, <span>{{data.personName.text}}</span> met with {{data.possessive}} life mentor <span>{{data.celebrity.text}}</span> who told {{data.possessive}} to learn how to <span>{{data.uselessSkill.text}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{data.uselessSkill.text}}</span> so {{data.pronoun}} studied programming instead. 
           <br><br>
           What a great decision! With {{data.possessive}} new skills, <span>{{data.personName.text}}</span> built a(n) <span>{{data.adjective.text}}</span> robot named <span>{{data.obnoxiousCelebrity.text}}</span> that not only loved <span>{{data.dirtyTask.text}}</span> but did it <span>{{data.hugeNumber.text}}</span> faster. 
         </p>
-        <button ng-click='reset()'>Start Over</button>
-      <!-- </div> -->
+        <div class='col-sm-4 col-sm-offset-8 resetMadLib'>
+          <button ng-click='reset()'>Start Over</button>
+        </div>
     </div>
 
   </div>
