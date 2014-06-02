@@ -25,6 +25,9 @@
     <form ng-controller='FormController' ng-submit='submit()' name='MyForm' novalidate ng-show='!(MyForm.submittedValid)'>
       <div class='provideWords col-sm-12 show-border'>
         <h3>Provide the following words:</h3>
+          <!-- TODO: 
+            [ ] Use legend element to say 'gender' and wrap gender with border
+          -->
           <fieldset>
             <label class='radio-inline'>
               <input type='radio' ng-model='data.gender' value='F' required> Female
@@ -38,7 +41,6 @@
           </fieldset>
         <div class='col-sm-4'>
           <input ng-model='data.personName.text' placeholder='{{data.personName.placeholder}}' class="form-group form-control" required>
-          <!-- <input ng-model='data.jobTitle.text' ng-init="data.jobTitle.placeholder='job title'" placeholder={{data.jobTitle.placeholder}} class="form-group form-control" required> -->
           <input ng-model='data.jobTitle.text' placeholder='{{data.jobTitle.placeholder}}' class="form-group form-control" required>
           <input ng-model='data.tediousTask.text' placeholder='{{data.tediousTask.placeholder}}' class="form-group form-control" required>
         </div>
@@ -53,6 +55,10 @@
           <input ng-model='data.adjective.text' placeholder='{{data.adjective.placeholder}}' class="form-group form-control" required>
           <div class='submitMadLib'>
             <input type='submit' value='Generate my Mad Lib'> <br>
+            <!-- TODO: 
+              [ ] Write custom validations methods bc Angular's built-in methods don't appear to be accurate for numbers, nor differentiate btw empty and invalid input states 
+              [ ] Improve CSS styling of invalid / valid fields (see Bootstrap examples)
+            -->
             <span ng-if='MyForm.submitted && MyForm.$error.required'>Please complete all fields</span>
             <span ng-show='MyForm.submitted && !MyForm.hugeNumber.$valid'>Please enter a valid "huge number"</span>
             <span ng-if='MyForm.submitted && !(MyForm.$error.required)'>Ready to Submit</span>
