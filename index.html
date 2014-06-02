@@ -56,7 +56,7 @@
           <div class='submitMadLib'>
             <input type='submit' value='Generate my Mad Lib'> <br>
             <!-- TODO: 
-              [ ] Write custom validations methods bc Angular's built-in methods don't appear to be accurate for numbers, nor differentiate btw empty and invalid input states 
+              [ ] Write custom validations methods bc Angular's built-in $error.number doesn't differentiate btw numbers vs. non-numbers (weird!), nor does $error.required differentiate btw empty and invalid input states
               [ ] Improve CSS styling of invalid / valid fields (see Bootstrap examples)
             -->
             <span ng-if='MyForm.submitted && MyForm.$error.required'>Please complete all fields</span>
