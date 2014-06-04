@@ -1,4 +1,4 @@
-angular.module('ngMadLibs', []);
+angular.module('ngMadLibs', ['ngAnimate']);
 
 angular.module('ngMadLibs')
   .controller('FormController', ['$scope', '$rootScope', function($scope, $rootScope) {
