@@ -32,9 +32,8 @@ fieldset {
   margin-bottom: 5px;
 }
 
-.provideWords {
-  padding-right: 15px;
-  padding-left: 15px;
+.formContainer {
+  position: absolute;
 }
 
 form {
@@ -82,4 +81,11 @@ form {
   transform: scaleY(0);
   opacity: 0;
   /*padding:0 10px;*/
+}
+
+.toggleDiv {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: lightGray;
 }
