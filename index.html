@@ -6,7 +6,7 @@
 </head>
 <!-- <body ng-controller='MadLibsController'> -->
 <body>
-  <div class='container'>
+  <div class='container row'>
     <div class='row header show-border'>
       <div class='col-xs-4 col-md-4 col-lg-4 vcenter'>
         <img src="img/mad-lib-happy-face.png" class="img-responsive center-block">
@@ -15,61 +15,68 @@
         <img src="img/ng-mad-libs-logo.png" class="img-responsive center-block">
       </div>
     </div>
+    <label>
+      Toggle div: <input type="checkbox" ng-model="checked"><br/>
+    </label>
 
-    <form ng-controller='FormController' ng-submit='submit()' name='MyForm' novalidate ng-show='!(MyForm.submittedValid)'>
-      <div class='provideWords col-sm-12 show-border'>
-        <h3>Provide the following words:</h3>
-          <!-- TODO: 
-            [ ] Use legend element to say 'gender' and wrap gender with border
-          -->
-          <fieldset>
-            <label class='radio-inline'>
-              <input type='radio' ng-model='data.gender' value='F' required> Female
-            </label>
-            <label class='radio-inline'>
-              <input type='radio' ng-model='data.gender' value='M' required> Male
-            </label>
-            <label class='radio-inline'>
-              <input type='radio' ng-model='data.gender' value='Other' required> Other
-            </label>
-          </fieldset>
-        <div class='col-sm-4'>
-          <input ng-model='data.personName.text' placeholder='{{data.personName.placeholder}}' class="form-group form-control" required>
-          <input ng-model='data.jobTitle.text' placeholder='{{data.jobTitle.placeholder}}' class="form-group form-control" required>
-          <input ng-model='data.tediousTask.text' placeholder='{{data.tediousTask.placeholder}}' class="form-group form-control" required>
-        </div>
-        <div class='col-sm-4'>
-          <input ng-model='data.dirtyTask.text' placeholder='{{data.dirtyTask.placeholder}}' class="form-group form-control" required>
-          <input ng-model='data.celebrity.text' placeholder='{{data.celebrity.placeholder}}' class="form-group form-control" required>
-          <input ng-model='data.uselessSkill.text' placeholder='{{data.uselessSkill.placeholder}}' class="form-group form-control" required>
-        </div>
-        <div class='col-sm-4'>
-          <input ng-model='data.obnoxiousCelebrity.text' placeholder='{{data.obnoxiousCelebrity.placeholder}}' class="form-group form-control" required>
-          <input type='number' name='hugeNumber' ng-model='data.hugeNumber.text' placeholder='{{data.hugeNumber.placeholder}}' class="form-group form-control" required>
-          <input ng-model='data.adjective.text' placeholder='{{data.adjective.placeholder}}' class="form-group form-control" required>
-          <div class='submitMadLib'>
-            <input type='submit' value='Generate my Mad Lib'> <br>
+    <!-- <form class='animate-hide' ng-controller='FormController' ng-submit='submit()' name='MyForm' novalidate ng-show='!(MyForm.submittedValid)'> -->
+    <div class='formContainer'>
+      <form ng-controller='FormController' ng-submit='submit()' name='MyForm' novalidate>
+        <div class='provideWords col-sm-12 show-border animate-hide' ng-show='!checked'>
+          <h3>Provide the following words:</h3>
             <!-- TODO: 
-              [ ] Write custom validations methods bc Angular's built-in $error.number doesn't differentiate btw numbers vs. non-numbers (weird!), nor does $error.required differentiate btw empty and invalid input states
-              [ ] Improve CSS styling of invalid / valid fields (see Bootstrap examples)
+              [ ] Use legend element to say 'gender' and wrap gender with border
             -->
-            <span ng-if='MyForm.submitted && MyForm.$error.required'>Please complete all fields</span>
-            <span ng-show='MyForm.submitted && !MyForm.hugeNumber.$valid'>Please enter a valid "huge number"</span>
-            <span ng-if='MyForm.submitted && !(MyForm.$error.required)'>Ready to Submit</span>
+            <fieldset>
+              <label class='radio-inline'>
+                <input type='radio' ng-model='data.gender' value='F' required> Female
+              </label>
+              <label class='radio-inline'>
+                <input type='radio' ng-model='data.gender' value='M' required> Male
+              </label>
+              <label class='radio-inline'>
+                <input type='radio' ng-model='data.gender' value='Other' required> Other
+              </label>
+            </fieldset>
+          <div class='col-sm-4'>
+            <input ng-model='data.personName.text' placeholder='{{data.personName.placeholder}}' class="form-group form-control" required>
+            <input ng-model='data.jobTitle.text' placeholder='{{data.jobTitle.placeholder}}' class="form-group form-control" required>
+            <input ng-model='data.tediousTask.text' placeholder='{{data.tediousTask.placeholder}}' class="form-group form-control" required>
+          </div>
+          <div class='col-sm-4'>
+            <input ng-model='data.dirtyTask.text' placeholder='{{data.dirtyTask.placeholder}}' class="form-group form-control" required>
+            <input ng-model='data.celebrity.text' placeholder='{{data.celebrity.placeholder}}' class="form-group form-control" required>
+            <input ng-model='data.uselessSkill.text' placeholder='{{data.uselessSkill.placeholder}}' class="form-group form-control" required>
+          </div>
+          <div class='col-sm-4'>
+            <input ng-model='data.obnoxiousCelebrity.text' placeholder='{{data.obnoxiousCelebrity.placeholder}}' class="form-group form-control" required>
+            <input type='number' name='hugeNumber' ng-model='data.hugeNumber.text' placeholder='{{data.hugeNumber.placeholder}}' class="form-group form-control" required>
+            <input ng-model='data.adjective.text' placeholder='{{data.adjective.placeholder}}' class="form-group form-control" required>
+            <div class='submitMadLib'>
+              <input type='submit' value='Generate my Mad Lib'> <br>
+              <!-- TODO: 
+                [ ] Write custom validations methods bc Angular's built-in $error.number doesn't differentiate btw numbers vs. non-numbers (weird!), nor does $error.required differentiate btw empty and invalid input states
+                [ ] Improve CSS styling of invalid / valid fields (see Bootstrap examples)
+              -->
+              <span ng-if='MyForm.submitted && MyForm.$error.required'>Please complete all fields</span>
+              <span ng-show='MyForm.submitted && !MyForm.hugeNumber.$valid'>Please enter a valid "huge number"</span>
+              <span ng-if='MyForm.submitted && !(MyForm.$error.required)'>Ready to Submit</span>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
 
-    <div ng-controller='ParagraphController' class='paragraphContainer col-sm-12 show-border' ng-show='submittedValid'>
-        <p class='lead'>
-          <span>{{data.personName.text}}</span> was a <span>{{data.jobTitle.text}}</span> who loved technology. Although {{data.pronoun}} loved parts of {{data.possessive}} job, {{data.pronoun}} absolutely hated  <span>{{data.tediousTask.text}}</span> and <span>{{data.dirtyTask.text}}</span>. So, <span>{{data.personName.text}}</span> met with {{data.possessive}} life mentor <span>{{data.celebrity.text}}</span> who told {{data.possessive}} to learn how to <span>{{data.uselessSkill.text}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{data.uselessSkill.text}}</span> so {{data.pronoun}} studied programming instead. 
-          <br><br>
-          What a great decision! With {{data.possessive}} new skills, <span>{{data.personName.text}}</span> built a(n) <span>{{data.adjective.text}}</span> robot named <span>{{data.obnoxiousCelebrity.text}}</span> that not only loved <span>{{data.dirtyTask.text}}</span> but did it <span>{{data.hugeNumber.text}}</span> faster. 
-        </p>
-        <div class='col-sm-4 col-sm-offset-8 resetMadLib'>
-          <button ng-click='reset()'>Start Over</button>
-        </div>
+    <!-- <div ng-controller='ParagraphController' class='paragraphContainer col-sm-12 show-border animate-hide' ng-show='submittedValid'> -->
+    <div ng-controller='ParagraphController' class='paragraphContainer col-sm-12 show-border animate-hide' ng-show='checked'>
+      <p class='lead'>
+        <span>{{data.personName.text}}</span> was a <span>{{data.jobTitle.text}}</span> who loved technology. Although {{data.pronoun}} loved parts of {{data.possessive}} job, {{data.pronoun}} absolutely hated  <span>{{data.tediousTask.text}}</span> and <span>{{data.dirtyTask.text}}</span>. So, <span>{{data.personName.text}}</span> met with {{data.possessive}} life mentor <span>{{data.celebrity.text}}</span> who told {{data.possessive}} to learn how to <span>{{data.uselessSkill.text}}</span> with Thinkful. Thinkful didn't offer a course on <span>{{data.uselessSkill.text}}</span> so {{data.pronoun}} studied programming instead. 
+        <br><br>
+        What a great decision! With {{data.possessive}} new skills, <span>{{data.personName.text}}</span> built a(n) <span>{{data.adjective.text}}</span> robot named <span>{{data.obnoxiousCelebrity.text}}</span> that not only loved <span>{{data.dirtyTask.text}}</span> but did it <span>{{data.hugeNumber.text}}</span> faster. 
+      </p>
+      <div class='col-sm-4 col-sm-offset-8 resetMadLib'>
+        <button ng-click='reset()'>Start Over</button>
+      </div>
     </div>
 
   </div>

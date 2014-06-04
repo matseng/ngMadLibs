@@ -4,6 +4,8 @@ angular.module('ngMadLibs')
   .controller('FormController', ['$scope', '$rootScope', function($scope, $rootScope) {
     
     function initializeData() {
+      $scope.MyForm = {};
+      $scope.MyForm.submitted = false;
       $scope.data = {};
       $scope.data.gender = 'Other';
       $scope.data.personName = {placeholder: 'person name'};
